@@ -1,0 +1,21 @@
+{
+  "name": "cypress-tekton-blog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start-server": "node src/app.js",
+    "test": "cypress run --headless -b chrome",
+    "cypress:ci": "start-server-and-test start-server http://localhost:3000 test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "cypress": "^6.1.0",
+    "start-server-and-test": "^1.11.6"
+  }
+}

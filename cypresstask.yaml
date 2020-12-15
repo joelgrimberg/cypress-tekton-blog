@@ -1,0 +1,22 @@
+apiVersion: tekton.dev/v1beta1
+kind: Task
+metadata:
+  name: start-cypress-test2
+spec:
+  steps:
+    - name: cypress
+      image: cypress/included:6.0.0
+      command:
+        - "cypress"
+      args:
+        - "run"
+
+---
+
+apiVersion: tekton.dev/v1beta1
+kind: TaskRun
+metadata:
+  name: run-cypress-tests2
+spec:
+  taskRef:
+    name: start-cypress-test2
